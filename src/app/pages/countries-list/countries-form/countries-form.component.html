@@ -1,0 +1,20 @@
+<div class="form-container">
+  <h1>Agregar país</h1>
+  <form class="countries-form" #checkoutForm="ngForm">
+    @for (field of fields; track $index) {
+      <mat-form-field class="form-element">
+        <mat-label>{{field.label}}</mat-label>
+        <input type="text" matInput required [(ngModel)]="model[field.key]"  name="{{field.key}}" #name="ngModel" placeholder="{{field.placeHolder}}">
+        @if (name.hasError('required')) {
+          <mat-error>Debes diligenciar el campo</mat-error>
+        }
+      </mat-form-field>
+    }
+  </form>
+
+  <footer class="form-footer">
+    <button mat-raised-button type="submit" [disabled]="!checkoutForm.valid" (click)="onSubmit(checkoutForm)">Guardar</button>
+
+    <button class="btn-back" (click)="navigateToCountriesList()">⬅ Atrás</button>
+  </footer>
+</div>

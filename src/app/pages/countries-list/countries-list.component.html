@@ -1,0 +1,13 @@
+<div class="countries-container">
+  <div class="countries-header">
+    <h1>Paises:</h1>
+
+    <button class="add-button" [routerLink]="['/countries/form']">Agregar pais</button>
+  </div>
+
+  <div class="countries-list">
+    @for (countrie of countries; track $index) {
+      <app-countrie-card [countrie]="countrie" (deleteCountrie)="onDeleteCountrie($event)"/>
+    }
+  </div>
+</div>

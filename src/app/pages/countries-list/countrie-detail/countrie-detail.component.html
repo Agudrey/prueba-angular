@@ -1,0 +1,21 @@
+<section class="country-detail">
+  <header>
+    <h2 class="country-name">{{ countrie.countryName }}</h2>
+  </header>
+
+  <article class="country-info">
+    <img [src]="countrie.img" [alt]="'Imagen de ' + countrie.countryName">
+
+
+    <div class="country-details">
+      <p><strong>Capital:</strong> {{ countrie.capital }}</p>
+      <p><strong>Población:</strong> {{ countrie.population }}</p>
+      <p><strong>Continente:</strong> {{ countrie.continentName }}</p>
+      <p><strong>Descripción:</strong> {{ countrie.description }}</p>
+    </div>
+  </article>
+
+  <footer class="country-footer">
+    <button class="btn-back" (click)="navigateToCountriesList()">⬅ Atrás</button>
+  </footer>
+</section>

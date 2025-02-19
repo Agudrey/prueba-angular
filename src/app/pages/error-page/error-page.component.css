@@ -1,0 +1,29 @@
+.error-container{
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-container button{
+  height: 30px;
+  width: 100px;
+  border-radius: 8px;
+  background-color: #7DA0CA;
+  border: 1px solid;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.error-container button:hover{
+  border-color: #7DA0CA;
+  background-color: white;
+  color: #7DA0CA;
+}

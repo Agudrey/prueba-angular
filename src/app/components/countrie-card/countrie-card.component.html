@@ -1,0 +1,16 @@
+<div class="countrie_card">
+  <img class="countrie_image" [src]="countrie.img" alt="countrie_image">
+
+  <div class="card_info_container">
+    <p>{{countrie.continentName}}</p>
+    <p><strong>Capital:</strong> {{countrie.capital}}</p>
+    <p><strong>Población:</strong> {{countrie.population}}</p>
+    <p><strong>Continente:</strong> {{countrie.continentName}}</p>
+  </div>
+
+  <div class="card_buttons_container">
+    <button [routerLink]="['/countries', countrie.id]" class="info_button card_button">Ver</button>
+
+    <button (click)="onDelete(countrie.id)" class="delete_button card_button">Eliminar</button>
+  </div>
+</div>
