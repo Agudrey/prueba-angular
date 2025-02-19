@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Countrie } from '../../../interfaces/interfaces';
+import { of, catchError } from 'rxjs';
 import { DataService } from '../../../services/data.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NavigationService } from '../../../services/navigation.service';
@@ -23,8 +23,16 @@ export class CountrieDetailComponent implements OnInit {
   }
 
   getCountryById(id: string) {
-    this.dataService.getCountrie(id).subscribe((data) => {
-      this.countrie = data;
+    this.dataService.getCountrie(id).pipe(
+      catchError((error) => {
+        console.error('Error al obtener el país:', error);
+        this.router.navigate(['/error']);
+        return of(null);
+      })
+    ).subscribe((data) => {
+      if (data) {
+        this.countrie = data;
+      }
     });
   }
 
